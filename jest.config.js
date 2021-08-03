@@ -3,6 +3,7 @@ module.exports = {
   coverageDirectory: 'coverage',
   coverageProvider: 'babel',
   preset: '@shelf/jest-mongodb',
+  watchPathIgnorePatterns: ['globalConfig'],
   roots: [
     '<rootDir>/src'
   ],
