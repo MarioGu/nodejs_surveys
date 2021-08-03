@@ -3,7 +3,7 @@ import { AccountMongoRepository } from './account'
 
 describe('Account Mongo Repository', () => {
   beforeAll(async () => {
-    await MongoHelper.connect(global.__MONGO_URI__ ?? 'nada')
+    await MongoHelper.connect(global.__MONGO_URI__)
   })
   afterAll(async () => {
     await MongoHelper.disconnect()
@@ -15,8 +15,6 @@ describe('Account Mongo Repository', () => {
       email: 'any_email@mail.com',
       password: 'any_password'
     })
-    console.log('account')
-    console.log(account)
 
     expect(account).toBeTruthy()
     expect(account.id).toBeTruthy()
