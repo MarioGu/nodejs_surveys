@@ -7,7 +7,7 @@ module.exports = {
   roots: [
     '<rootDir>/src'
   ],
-  testEnvironment: 'jest-environment-node',
+  // testEnvironment: 'jest-environment-node',
   transform: {
     '.+\\.ts$': 'ts-jest'
   }
