@@ -10,7 +10,7 @@
     "test:console": "jest --passWithNoTests --verbose false --runInBand",
     "test:unit": "npm test -- --watch -c jest-unit-config.js",
     "test:integration": "npm test -- --watch -c jest-integration-config.js",
-    "test:staged": "npm test --",
+    "test:staged": "npm test -- --findRelatedTests $(git status --porcelain | grep M | awk '{print $2}')",
     "test:ci": "npm test -- --coverage",
     "prepare": "husky install"
   },
