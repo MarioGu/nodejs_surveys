@@ -98,7 +98,7 @@ describe('SignUp Controller', () => {
   test('should return 200 if an valid data is provided', async () => {
     const { sut } = makeSut()
     const httpResponse = await sut.handle(makeFakeHttpRequest())
-    expect(httpResponse).toEqual(ok(makeFakeAccount()))
+    expect(httpResponse).toEqual(ok({ accessToken: 'any_token' }))
   })
 
   test('should call Validation with correct value', async () => {
@@ -116,7 +116,7 @@ describe('SignUp Controller', () => {
     expect(httpResponse).toEqual(badRequest(new MissingParamError('any_field')))
   })
 
-  test('Should call authentication with correct values', async () => {
+  test('Should call Authentication with correct values', async () => {
     const { sut, authenticationStub } = makeSut()
     const authSpy = jest.spyOn(authenticationStub, 'auth')
     await sut.handle(makeFakeHttpRequest())
